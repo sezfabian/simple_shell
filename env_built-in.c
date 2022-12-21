@@ -11,7 +11,7 @@
  *	   Otherwise - 0.
  */
 
-int env_builtin(char **args, char __attribute__((__unused__)) **front)
+int env_builtin(char **args, char __attribute__((__unused__)) **front)
 {
 	int i;
 	char nChar = '\n';
