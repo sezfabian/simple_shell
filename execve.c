@@ -12,7 +12,7 @@ void _exec(char **args)
 
 	if (child_pid == 0)
 	{
-		execve(args[0], args, NULL);
+		execve(args[0], args, environ);
 		perror("./Shell: ");
 		exit(1);
 	}
