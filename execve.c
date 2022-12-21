@@ -12,9 +12,8 @@ void _exec(char **args)
 
 	if (child_pid == 0)
 	{
-		printf("execute was done\n");
-		execve(args[0], args, environ);
-		perror("Bash");
+		execve(args[0], args, NULL);
+		perror("./Shell: ");
 		exit(1);
 	}
 	else if (child_pid > 0)

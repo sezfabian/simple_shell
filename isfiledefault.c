@@ -22,8 +22,11 @@ int isfiledefault(const char *path)
 		s2++;
 	}
 
-	if ((stat(str1, &stats) < 0) && (stat(str2, &stats) < 0))
-		return (-1);
+	if (stat(str1, &stats) >= 0)
+		return (1);
+	if (stat(str2, &stats) >= 0)
+		return (2);
 	else
-		return (0);
+		return (-1);
 }
+

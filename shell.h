@@ -28,7 +28,8 @@ typedef struct builtin_s
 char **split_line(char *line);
 int isfiledefault(const char *path);
 void _exec(char **args);
-
+char *_usrbin(char *path);
+char *_usrbin2(char *path);
 /* String functions */
 int _strlen(const char *s);
 char *_strcat(char *dest, const char *src);

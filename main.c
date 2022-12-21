@@ -16,7 +16,7 @@ int main(void)
 
 	while (runit == 1)
 	{
-		printf("#cisfun$ ");
+		write(1, "#cisfun$ ", 9);
 		getv = getline(&line, &buffer, stdin);
 		if (getv == -1 || getv == 255)
 		{
@@ -27,9 +27,22 @@ int main(void)
 		if (tokens[0] != NULL)
 		{
 			if (stat(tokens[0], &fileStat) >= 0)
+			{
 				_exec(tokens);
-			else if (isfiledefault(tokens[0]) >= 0)
+				free(tokens);
+			}
+			else if (isfiledefault(tokens[0]) == 2)
+			{
+				tokens[0] = _usrbin2(tokens[0]);
 				_exec(tokens);
+				free(tokens);
+			}
+			else if (isfiledefault(tokens[0]) == 1)
+			{
+				tokens[0] = _usrbin(tokens[0]);
+				_exec(tokens);
+				free(tokens);
+			}
 			else
 				perror("./Shell: ");
 		}
