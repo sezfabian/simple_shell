@@ -31,7 +31,7 @@ int main(void)
 			else if (isfiledefault(tokens[0]) >= 0)
 				_exec(tokens);
 			else
-				perror("Bash");
+				perror("./Shell: ");
 		}
 	}
 

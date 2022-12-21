@@ -13,7 +13,7 @@ void _exec(char **args)
 	if (child_pid == 0)
 	{
 		printf("execute was done\n");
-		execve(args[0], args);
+		execve(args[0], args, NULL);
 		perror("Bash");
 		exit(1);
 	}
