@@ -54,7 +54,7 @@ char *error_1(char **args)
 	char *error;
 	int len;
 
-	en = _strlen(name) + _strlen(args[0]) + 13;
+	len = _strlen(name) + _strlen(args[0]) + 13;
 	error = malloc(sizeof(char) * (len + 1));
 	if (!error)
 		return (NULL);
